@@ -20,3 +20,9 @@ struct SafariView: UIViewControllerRepresentable {
         
     }
 }
+
+
+#Preview{
+    SafariView(url: URL(string: "https://www.google.com")!)
+
+}
