@@ -13,6 +13,7 @@ struct National_Parks: View {
             VStack(alignment: .leading, spacing: 0){
                 ScrollView(.vertical, showsIndicators: false){
                     FeaturedView(image: "view1",title: "Grand Canyon",subTitle: "Arizona")
+                        .padding(.top)
                     MostPopuler( images: "view2", caption: "Dhaka", title: "Most populer")
                         .padding()
                     Divider()
@@ -22,15 +23,10 @@ struct National_Parks: View {
                     
                 }
                 
-            }
-            .padding(.top)
+            }            .navigationTitle("Now trending")
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .navigationBarTitleDisplayMode(.inline)  // or .inline if you prefer
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color(.systemBackground), for: .navigationBar)
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        
                         Button(action: {
                             print("Profile tapped")
                         }) {
@@ -111,9 +107,14 @@ struct MostPopuler: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .cornerRadius(10)
-                            Text(caption)
-                                .font(.system(size: 15, weight: .medium, design: .default))
-                                .foregroundColor(.blue)
+                            HStack{
+                                Circle()
+                                    .fill(Color.blue)
+                                    .frame(width: 10, height: 10)
+                                Text(caption)
+                                    .font(.system(size: 15, weight: .medium, design: .default))
+                                    .foregroundColor(.blue)
+                            }
                             
                         }
                         
