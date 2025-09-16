@@ -18,7 +18,8 @@ import SwiftUI
 struct apple_frameworkApp: App {
     var body: some Scene {
         WindowGroup {
-            FrameworkGridView()
+           // FrameworkGridView()
+            RegisterView()
         }
     }
 }
